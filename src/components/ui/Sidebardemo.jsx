@@ -9,7 +9,7 @@ import {
   IconStar,
   IconTrendingUp,
 } from "@tabler/icons-react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { signOut } from "../../lib/cognito";
 
 export function SidebarDemo() {
