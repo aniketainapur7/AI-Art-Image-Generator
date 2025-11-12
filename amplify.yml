@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "🧹 Cleaning cache and installing dependencies..."
+        - npm ci --legacy-peer-deps
+    build:
+      commands:
+        - echo "⚙️ Building Vite project for production..."
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .npm/**/*
+  environment:
+    variables:
+      NODE_VERSION: 18
+      NPM_VERSION: 10
